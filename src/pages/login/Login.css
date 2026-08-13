@@ -1,0 +1,5 @@
+.landing-content {
+    --background: linear-gradient(135deg, #f9f2d5 0%, #e3cff7 100%);;
+    display: flex;
+    flex-direction: column;
+  }

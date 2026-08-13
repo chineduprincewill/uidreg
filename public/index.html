@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Ionic App</title>
+    <title>UUID Linkage</title>
 
     <base href="/" />
 
@@ -17,11 +17,28 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <link rel="shortcut icon" type="image/png" href="%PUBLIC_URL%/assets/icon/favicon.png" />
+    <link rel="stylesheet" href="https://unpkg.com/@ionic/react@7/css/ionic.bundle.css" />
 
     <!-- add to homescreen for ios -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Ionic App" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <script type="module" crossorigin>
+      // -------------------- IMPORT MAP --------------------
+      const importMap = document.createElement('script');
+      importMap.type = 'importmap';
+      importMap.textContent = JSON.stringify({
+        imports: {
+          'react': 'https://unpkg.com/react@18/umd/react.production.min.js',
+          'react-dom': 'https://unpkg.com/react-dom@18/umd/react-dom.production.min.js',
+          '@ionic/react': 'https://unpkg.com/@ionic/react@7/dist/index.esm.js',
+          '@ionic/react/css/': 'https://unpkg.com/@ionic/react@7/css/',
+          '@ionic/core/': 'https://unpkg.com/@ionic/core@7/dist/',
+          'ionicons/': 'https://unpkg.com/ionicons@7/dist/'
+        }
+      });
+      document.head.prepend(importMap);
+    </script>
   </head>
 
   <body>

@@ -1,0 +1,288 @@
+/* Home.css */
+
+.landing-content {
+    --background: linear-gradient(135deg, #f9f2d5 0%, #e3cff7 100%);;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .landing-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 100px; /* Space for footer */
+    min-height: 100%;
+  }
+  
+  /* Logo Section */
+  .logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+  
+  .logo-wrapper {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+  }
+  
+  .app-logo {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+    /*filter: brightness(0) invert(1);*/
+  }
+
+  .apin-logo {
+    width: 8%;
+    height: 8%;
+    object-fit: contain;
+    /*filter: brightness(0) invert(1);*/
+  }
+  
+  .logo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-icon {
+    font-size: 60px;
+    color: white;
+  }
+  
+  .app-name {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .app-name h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(135deg, #b6940e 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .app-name p {
+    font-size: 16px;
+    font-weight: 100;
+    color: #764ba2;
+    margin: 30px 0 0 0;
+    line-height: 3vmax;
+    padding-left: 2vmax;
+    padding-right: 2vmax;
+  }
+  
+  /* Flash Message */
+  .flash-message-card {
+    margin: 0 16px 24px 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #ffc107;
+    background: white;
+  }
+  
+  .flash-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 4px 0;
+  }
+  
+  .flash-icon-wrapper {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff3cd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .flash-icon {
+    font-size: 24px;
+    color: #ffc107;
+  }
+  
+  .flash-content {
+    flex: 1;
+  }
+  
+  .flash-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #1a1a1a;
+  }
+  
+  .flash-description {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  /* Features Grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 400px;
+    margin: 16px 0;
+  }
+  
+  .feature-item {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-2px);
+  }
+  
+  .feature-icon {
+    font-size: 28px;
+    color: #667eea;
+    margin-bottom: 8px;
+  }
+  
+  .feature-item h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 4px 0;
+  }
+  
+  .feature-item p {
+    font-size: 12px;
+    color: #6c757d;
+    margin: 0;
+  }
+
+  .custom-searchbar {
+    --background: transparent;
+    --color: #1a202c;
+    --placeholder-color: #718096;
+    --placeholder-font-style: italic;
+    --border-radius: 12px;
+    --box-shadow: none;
+    --icon-color: #4299e1;
+    --clear-button-color: #e53e3e;
+    
+    /* Height and padding */
+    --max-height: 16px;
+    --padding-start: 4px;
+    --padding-end: 4px;
+  }
+  
+  /* Footer */
+  .landing-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    padding: 6px 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .footer-content {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .next-button {
+    --background: linear-gradient(135deg, #ffc107 0%, #b6940e 100%);
+    --border-radius: 50px;
+    --box-shadow: 0 4px 16px rgba(212, 166, 15, 0.4);
+    height: 54px;
+    width: 50%;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: none;
+  }
+  
+  .next-button:active {
+    transform: scale(0.98);
+  }
+  
+  .next-button ion-spinner {
+    --color: white;
+  }
+  
+  .footer-links {
+    text-align: center;
+    margin-top: 12px;
+  }
+  
+  .footer-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 10px;
+    font-size: 14px;
+  }
+  
+  .footer-text a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  /* Animation */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  .logo-wrapper {
+    animation: pulse 3s ease-in-out infinite;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .logo-wrapper {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .app-name h1 {
+      font-size: 28px;
+    }
+  
+    .flash-title {
+      font-size: 16px;
+    }
+  }

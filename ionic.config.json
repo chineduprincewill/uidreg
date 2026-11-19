@@ -1,5 +1,7 @@
 {
-  "name": "wastelogic",
-  "integrations": {},
+  "name": "uidreg",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "react"
 }

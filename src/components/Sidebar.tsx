@@ -58,7 +58,7 @@ const Sidebar: React.FC<SidebarProps> = ({ menuId, activeTab, setActiveTab }) =>
                   />
                 </div>
                 <div>
-                  <IonTitle className="text-xl font-bold text-[#4b2571] p-0">WasteLogic</IonTitle>
+                  <IonTitle className="text-xl font-bold text-[#4b2571] p-0">UIDReg</IonTitle>
                   <p className="text-xs text-[#4b2571] -mt-1">v2.0 · admin</p>
                 </div>
               </div>

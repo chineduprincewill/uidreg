@@ -78,6 +78,8 @@ const LinkageForm: React.FC<SetShowModalProps> = ({setShowModal, setIsUpdated, i
                 facility,
                 formData
             }
+
+            console.log(data)
             
             setSubmitting(true);
             
@@ -143,7 +145,7 @@ const LinkageForm: React.FC<SetShowModalProps> = ({setShowModal, setIsUpdated, i
         }
     }, [isEditing]);
 
-    console.log(facility)
+    console.log(isEditing)
 
 
     const renderField = (field: Formfields) => {

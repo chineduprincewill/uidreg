@@ -209,7 +209,7 @@ h3,
 
 /* ---------- Dashboard ---------- */
 .hero {
-  padding: 20px 0 20px;
+  padding: 20px 0 0px;
 }
 .hero-eyebrow {
   color: var(--muted-2);
@@ -452,8 +452,8 @@ h3,
   --border: 1px solid var(--hairline);
   backdrop-filter: blur(18px);
   height: 70px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 8px;
+  padding-bottom: 0px;
 }
 .tabbar ion-tab-button {
   font-size: 11px;

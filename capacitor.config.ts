@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.wastelogic.app',
-  appName: 'wastelogic',
+  appId: 'io.ionic.starter',
+  appName: 'uidreg',
   webDir: 'build'
 };
 

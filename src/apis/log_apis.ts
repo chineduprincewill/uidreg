@@ -1,4 +1,4 @@
-import { ClientIdProps, FormDataProps, Formfields, RegisterCredentials, User } from "../types/auth.types";
+import { ClientIdProps, FormDataProps, Formfields, PaginatedResponse, RegisterCredentials, User } from "../types/auth.types";
 import { FormData, FormField, ReportData, RequestObject, TrackingData } from "../types/logreports.types";
 
 const baseUrl = 'https://admintools.apin.org.ng/dctms/backend/public';
@@ -337,18 +337,98 @@ export const update_client_ids = async (
   }
 };
 
-export const get_client_ids = async (
-  token: string | null): Promise<ClientIdProps[] | undefined> => {
+/**export const get_client_ids = async (
+  token: string | null,
+  facility: string | null): Promise<ClientIdProps[] | undefined> => {
   try {
     if (token) {
       const response = await fetch(
         `${baseUrl}/api/clientids`,
         {
+          method: 'POST',
           headers: { 
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
-          }
-        }
+          },
+          body: JSON.stringify({facility})
+        },
+      );
+      
+      if (response.ok) {
+          // If API returns array directly
+          const responseData: ClientIdProps[] = await response.json();
+          //console.log(responseData);
+          return responseData; // Return array directly
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Error loading report!');
+      }
+    }
+    
+    // Return undefined or throw error if no token
+    return undefined;
+    
+  } catch (error) {
+    console.error('Report loading failed:', error);
+    // Optionally re-throw or return undefined
+    throw error; // or return undefined;
+  }
+}; */
+
+export const get_client_ids = async (
+  token: string | null,
+  facility: string | null,
+  page = 1,
+  perPage = 500
+): Promise<PaginatedResponse<ClientIdProps> | undefined> => {
+  try {
+    if (token) {
+      const response = await fetch(
+        `${baseUrl}/api/clientids`,
+        {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          // 1. Add page and per_page to the request body
+          body: JSON.stringify({ facility, page, per_page: perPage })
+        },
+      );
+      
+      if (response.ok) {
+          // 2. The response is now the paginated object, not a flat array
+          const responseData: PaginatedResponse<ClientIdProps> = await response.json();
+          return responseData; 
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Error loading report!');
+      }
+    }
+    
+    return undefined;
+    
+  } catch (error) {
+    console.error('Report loading failed:', error);
+    throw error; 
+  }
+};
+
+export const search_client_id = async (
+  token: string | null,
+  clientid: string | null): Promise<ClientIdProps[] | undefined> => {
+  try {
+    if (token) {
+      const response = await fetch(
+        `${baseUrl}/api/search-clientid`,
+        {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({clientid})
+        },
       );
       
       if (response.ok) {
@@ -404,6 +484,47 @@ export const submit_form = async (
     
   } catch (error) {
     console.error('Form submitting failed:', error);
+    // Optionally re-throw or return undefined
+    throw error; // or return undefined;
+  }
+};
+
+export const merge_client_ids = async (
+  token: string | null,
+  id1: number | null,
+  id2: number | null,
+  updated: FormData
+): Promise<ClientIdProps | undefined> => {
+  try {
+    if (token) {
+      const response = await fetch(
+        `${baseUrl}/api/merge`,
+        {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({id1, id2, updated})
+        }
+      );
+      
+      if (response.ok) {
+          // If API returns array directly
+          const responseData: ClientIdProps = await response.json();
+          //console.log(responseData);
+          return responseData; // Return array directly
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Error loading report!');
+      }
+    }
+    
+    // Return undefined or throw error if no token
+    return undefined;
+    
+  } catch (error) {
+    console.error('Report loading failed:', error);
     // Optionally re-throw or return undefined
     throw error; // or return undefined;
   }
